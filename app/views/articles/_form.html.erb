@@ -9,18 +9,19 @@
 <% end %>
 
 <%= form_for @article, data: { turbo:false } do |f| %>
-    <p>
-        <%= f.label :title %><br/>
-        <%= f.text_field :title %>
-    </p>
+    <div class="form-group">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
+    </div>
+        
 
-    <p>
+    <div class="form-group">
         <%= f.label :description %><br/>
-        <%= f.text_field :description %>
-    </p>
+        <%= f.text_field :description, class: "form-control" %>
+    </div>
 
     <p>
-        <%= f.submit %>
+        <%= f.submit 'Create', :class => 'btn btn-primary' %>
     </p>
 <% end %>
 

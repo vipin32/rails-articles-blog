@@ -1,12 +1,7 @@
-<% if @article.errors.any? %>
-    <div class="alert alert-danger">
-        <% @article.errors.full_messages.each do |message| %>
-            <p>
-                <%= message %>
-            </p>
-        <% end %>
-    </div>
-<% end %>
+
+
+<%= render 'shared/errors', obj: @article %>
+
 
 <%= form_for @article, data: { turbo:false } do |f| %>
     <div class="form-group">

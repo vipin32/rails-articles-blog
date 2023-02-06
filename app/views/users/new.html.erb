@@ -1,15 +1,8 @@
 <h1 class="text-center">Signup Form</h1>
 
 
-<% if @user.errors.any? %>
-    <div class="alert alert-danger">
-        <% @user.errors.full_messages.each do |message| %>
-            <p>
-                <%= message %>
-            </p>
-        <% end %>
-    </div>
-<% end %>
+<%= render 'shared/errors', obj: @user %>
+
 
 <%= form_for @user, data: { turbo:false } do |f| %>
     <div class="form-group">

@@ -1,0 +1,18 @@
+<% obj.each do |article| %>
+
+    <div class="card-body bg-light mb-2">
+        <h3><%= link_to article.title, article_path(article) %></h3>
+        <p><%= truncate(article.description, length: 100) %></p>
+        <small>Author : <%= article.user.username if article.user %> | </small>
+        <small>Posted : <%= time_ago_in_words(article.created_at) %> ago | Last Updated : <%= time_ago_in_words(article.updated_at) %> ago</small>
+
+        <div class="d-flex mt-2">
+          
+          <%= link_to "Edit", edit_article_path(article), class: "btn btn-sm btn-secondary mr-1" %>
+          <%= button_to "Delete", article_path(article), method: :delete, class: "btn btn-sm btn-danger " %>
+        </div>
+
+    </div>
+
+    
+  <% end %>

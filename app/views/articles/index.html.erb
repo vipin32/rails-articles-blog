@@ -5,3 +5,14 @@
 
 
 <%= render "article", obj: @articles%>
+
+<div class="text-center">
+  <%= will_paginate(@articles,:previous_label => "Prev", :next_label => "Next") %>
+</div>
+
+
+
+
+
+
+

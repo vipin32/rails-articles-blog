@@ -5,4 +5,8 @@
     <%= gravatar_for @user %>
 </div> 
 
-<%= render "articles/article", obj: @user.articles %>
+<%= render "articles/article", obj: @user_articles %>
+
+<div class="text-center">
+  <%= will_paginate(@user_articles,:previous_label => "Prev", :next_label => "Next") %>
+</div>

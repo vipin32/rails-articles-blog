@@ -1,0 +1,16 @@
+<%= form_for :session,url: login_path, data: { turbo:false } do |f| %>
+    
+    <div class="form-group">
+        <%= f.label :email %><br/>
+        <%= f.email_field :email, class: "form-control" %>
+    </div>
+
+     <div class="form-group">
+        <%= f.label :password %><br/>
+        <%= f.password_field :password, class: "form-control" %>
+    </div>
+
+    <p>
+        <%= f.submit('Login', class: 'btn btn-primary') %>
+    </p>
+<% end %>

@@ -1,0 +1,10 @@
+<% obj.each do |user| %>
+
+    <div class="offset-sm-3 col-sm-6 card-body bg-light mb-2 justify-content-center text-center">
+        <p><%= gravatar_for user %></p>
+        <h3><%= link_to user.username, user_path(user) %></h3>
+        <p><%= pluralize(user.articles.count, "article") %></p>
+    </div>
+
+    
+<% end %>

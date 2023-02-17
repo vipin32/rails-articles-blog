@@ -9,3 +9,9 @@
         <%= flash[:notice] %>
     </div>
 <% end %>
+
+<% if flash[:danger] %>
+    <div class="alert alert-danger">
+        <%= flash[:danger] %>
+    </div>
+<% end %>

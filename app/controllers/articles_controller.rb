@@ -67,7 +67,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-        if logged_in? && current_user != @article.user
+        if current_user != @article.user and !current_user.admin?
             flash[:danger] = "You must be the owner of the article to perform any action"
             redirect_to root_path
         end

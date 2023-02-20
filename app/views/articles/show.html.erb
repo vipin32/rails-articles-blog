@@ -10,7 +10,7 @@
     <small>Author : <%= (link_to @article.user.username, user_path(@article.user)) if @article.user %> </small>
 </p>
 
-<% if logged_in? && current_user == @article.user %>
+<% if logged_in? && (current_user == @article.user || current_user.admin?) %>
     <a href="<%= edit_article_path(@article) %>">Edit Article </a> |
 <% end %>
 
